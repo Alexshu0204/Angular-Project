@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { PlayingCard } from './components/playing-card/playing-card';
+import { Monster } from './models/monster.model';
 
 @Component({ //fournit les métadonnées nécessaires pour que Angular sache comment afficher et gérer ce composant.
   selector: 'app-root', //Définit le nom de la balise HTML que Angular utilisera pour insérer ce composant dans le DOM.
@@ -9,4 +10,14 @@ import { PlayingCard } from './components/playing-card/playing-card';
   styleUrl:'./app.component.css'
 })
 export class App {
+
+  monster1!: Monster; 
+
+  constructor() {
+    this.monster1 = new Monster();
+    this.monster1.name = "Pik";
+    this.monster1.hp = 40;
+    this.monster1.figureCaption = "N°001 Pik"
+  }
+
 }
